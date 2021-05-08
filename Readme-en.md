@@ -25,7 +25,7 @@
         }
    ```
 4. Change your typora setting to use this program as its image uploader: settings-image
-5. ![Demo](https://qncdn.wubowen.com.cn/typora/210508-162521-tqu-demo.gif)
+5. [Demo](https://qncdn.wubowen.com.cn/typora/210508-162521-tqu-demo.gif)
 
 # References
 [qiniuyun_upload_tools](https://github.com/Han-Ya-Jun/qiniuyun_upload_tools)

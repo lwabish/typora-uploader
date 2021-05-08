@@ -24,7 +24,7 @@
         }
    ```
 4. 配置typora：偏好设置-图像
-5. ![演示gif](https://qncdn.wubowen.com.cn/typora/210508-162521-tqu-demo.gif)
+5. [演示gif](https://qncdn.wubowen.com.cn/typora/210508-162521-tqu-demo.gif)
 
 ## 参考&致谢
 
