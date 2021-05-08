@@ -6,9 +6,8 @@ import (
 )
 
 type Config struct {
-	AccessKey string `json:"access_key"`
-	SecretKey string `json:"secret_key"`
-	//Zone          int    `json:"zone"`
+	AccessKey     string `json:"access_key"`
+	SecretKey     string `json:"secret_key"`
 	Bucket        string `json:"Bucket"`
 	UseHTTPS      bool   `json:"use_https"`
 	UseCdnDomains bool   `json:"use_cdn_domains"`
@@ -37,9 +36,8 @@ func LoadConfig(path string) (config *Config) {
 // NewConfig generate an empty config
 func NewConfig() *Config {
 	return &Config{
-		AccessKey: "",
-		SecretKey: "",
-		//Zone:          0,
+		AccessKey:     "",
+		SecretKey:     "",
 		Bucket:        "",
 		UseHTTPS:      true,
 		UseCdnDomains: true,

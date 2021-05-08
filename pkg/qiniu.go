@@ -10,10 +10,9 @@ import (
 )
 
 type QiNiuClient struct {
-	AccessKey string `json:"access_key"`
-	SecretKey string `json:"secret_key"`
-	Bucket    string `json:"bucket"`
-	//Zone          int    `json:"zone"` //0:华东, 1:华北, 2:华南, 3:北美
+	AccessKey     string `json:"access_key"`
+	SecretKey     string `json:"secret_key"`
+	Bucket        string `json:"bucket"`
 	UseHTTPS      bool   `json:"use_https"`
 	UseCdnDomains bool   `json:"use_cdn_domains"`
 	Domain        string `json:"domain"`
@@ -21,10 +20,9 @@ type QiNiuClient struct {
 
 func NewQiNiuClient(accessKey, secretKey, bucket string, useHttps, useCdnDomains bool, domain string) *QiNiuClient {
 	return &QiNiuClient{
-		AccessKey: accessKey,
-		SecretKey: secretKey,
-		Bucket:    bucket,
-		//Zone:          0,
+		AccessKey:     accessKey,
+		SecretKey:     secretKey,
+		Bucket:        bucket,
 		UseHTTPS:      useHttps,
 		UseCdnDomains: useCdnDomains,
 		Domain:        domain,
