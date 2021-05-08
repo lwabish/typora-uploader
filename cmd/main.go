@@ -39,7 +39,7 @@ func main() {
 	log.Println("Images to upload accepted from args: ", images)
 
 	config := pkg.LoadConfig(configFilePath)
-	qClient := pkg.NewQiNiuClient(config.AccessKey, config.SecretKey, config.Bucket, config.UseHTTPS, config.UseCdnDomains, config.Domain)
+	qClient := pkg.NewQiNiuClient(config.AccessKey, config.SecretKey, config.Bucket, config.UseHTTPS, config.UseCdnDomains, config.Domain, config.SubDir)
 	qClient.UploadImages(images)
 
 }

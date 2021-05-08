@@ -42,5 +42,6 @@ func NewConfig() *Config {
 		UseHTTPS:      true,
 		UseCdnDomains: true,
 		Domain:        "",
+		SubDir:        "",
 	}
 }

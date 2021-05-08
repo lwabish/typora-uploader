@@ -16,9 +16,10 @@ type QiNiuClient struct {
 	UseHTTPS      bool   `json:"use_https"`
 	UseCdnDomains bool   `json:"use_cdn_domains"`
 	Domain        string `json:"domain"`
+	Subdir        string `json:"subdir"`
 }
 
-func NewQiNiuClient(accessKey, secretKey, bucket string, useHttps, useCdnDomains bool, domain string) *QiNiuClient {
+func NewQiNiuClient(accessKey, secretKey, bucket string, useHttps, useCdnDomains bool, domain, subdir string) *QiNiuClient {
 	return &QiNiuClient{
 		AccessKey:     accessKey,
 		SecretKey:     secretKey,
@@ -26,6 +27,7 @@ func NewQiNiuClient(accessKey, secretKey, bucket string, useHttps, useCdnDomains
 		UseHTTPS:      useHttps,
 		UseCdnDomains: useCdnDomains,
 		Domain:        domain,
+		Subdir:        subdir,
 	}
 }
 
@@ -44,9 +46,10 @@ func (q *QiNiuClient) UploadImages(images []string) (urls []string) {
 
 	for _, image := range images {
 		_, fileName := path.Split(image)
-		key := time.Now().Format("060102-150405") + "-" + fileName
-		if err := formUploader.PutFile(context.Background(), ret, token, key, image, nil); err != nil {
-			log.Fatalln(err)
+		log.Println("start uploading", fileName)
+		key := q.Subdir + "/" + time.Now().Format("060102-150405") + "-" + fileName
+		if err := formUploader.PutFile(context.Background(), &ret, token, key, image, nil); err != nil {
+			log.Fatalln("Error:", err)
 		}
 		urls = append(urls, q.Domain+key)
 	}
