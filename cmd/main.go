@@ -2,6 +2,7 @@ package main
 
 import (
 	"encoding/json"
+	"fmt"
 	"github.com/lwabish/typora-qiniu-uploader/pkg"
 	"io/ioutil"
 	"log"
@@ -12,6 +13,7 @@ import (
 var images []string
 
 func main() {
+	// TODO: save log to file
 	log.SetFlags(log.Lshortfile | log.LstdFlags)
 
 	homeDir, err := os.UserHomeDir()
@@ -40,6 +42,12 @@ func main() {
 
 	config := pkg.LoadConfig(configFilePath)
 	qClient := pkg.NewQiNiuClient(config.AccessKey, config.SecretKey, config.Bucket, config.UseHTTPS, config.UseCdnDomains, config.Domain, config.SubDir)
-	qClient.UploadImages(images)
+	imageUris := qClient.UploadImages(images)
+
+	log.Println("Jobs done!")
+	for _, imageUri := range imageUris {
+		// use fmt instead of log because typora will recognize image url from stdout
+		fmt.Println(imageUri)
+	}
 
 }
