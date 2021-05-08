@@ -6,6 +6,7 @@
 
 - Basic Feature: Upload files to Qiniu Cloud and get urls immediately
 - Advanced Feature: Integrate with a super cool markdown editor and transform local images into remote ones immediately
+- [Demo](https://qncdn.wubowen.com.cn/typora/210508-162521-tqu-demo.gif)
 
 ## Usage
 
@@ -25,7 +26,7 @@
         }
    ```
 4. Change your typora setting to use this program as its image uploader: settings-image
-5. [Demo](https://qncdn.wubowen.com.cn/typora/210508-162521-tqu-demo.gif)
 
 # References
+
 [qiniuyun_upload_tools](https://github.com/Han-Ya-Jun/qiniuyun_upload_tools)

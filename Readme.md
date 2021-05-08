@@ -6,6 +6,7 @@
 
 - 基本功能：将图片等文件上传到七牛云，并返回访问链接
 - 进阶功能：在[typora](https://typora.io/) 编辑器中无缝调用，自动将markdown中的本地图片转为七牛云中的图片
+- [演示](https://qncdn.wubowen.com.cn/typora/210508-162521-tqu-demo.gif)
 
 ## 使用方法
 
@@ -24,7 +25,6 @@
         }
    ```
 4. 配置typora：偏好设置-图像
-5. [演示gif](https://qncdn.wubowen.com.cn/typora/210508-162521-tqu-demo.gif)
 
 ## 参考&致谢
 
