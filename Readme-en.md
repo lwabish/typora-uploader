@@ -27,6 +27,10 @@
    ```
 4. Change your typora setting to use this program as its image uploader: settings-image
 
-# References
+## Attention
+
+- Availability only tested on mac 11.3 and typora 0.10.8 (5313), other platforms or typora versions not fully tested, use at your own risks.
+
+## References
 
 [qiniuyun_upload_tools](https://github.com/Han-Ya-Jun/qiniuyun_upload_tools)
