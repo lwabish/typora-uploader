@@ -12,6 +12,8 @@ import (
 
 var images []string
 
+var version string
+
 func main() {
 	// TODO: save log to file
 	log.SetFlags(log.Lshortfile | log.LstdFlags)
@@ -37,6 +39,10 @@ func main() {
 		log.Fatalf("Can't find config file, a default one has been written to:  %s, please edit it and rerun this program", configFilePath)
 	}
 
+	if len(os.Args) < 2 {
+		printUsage()
+	}
+
 	images = os.Args[1:]
 	log.Println("Images to upload accepted from args: ", images)
 
@@ -50,4 +56,11 @@ func main() {
 		fmt.Println(imageUri)
 	}
 
+}
+
+func printUsage() {
+	fmt.Println("typora-qiniu-uploader(tql):", version)
+	fmt.Println()
+	fmt.Println("Usage: tql <path1 path2 ...>")
+	os.Exit(0)
 }

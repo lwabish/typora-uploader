@@ -1,2 +1,6 @@
+version=v1.0.0
+
 install:
-	go install cmd/tqu.go
+	go install -ldflags " \
+	-X main.version=$(version) \
+    " cmd/tqu.go
