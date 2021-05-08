@@ -6,6 +6,7 @@ import (
 	"github.com/qiniu/go-sdk/v7/storage"
 	"log"
 	"path"
+	"strings"
 	"time"
 )
 
@@ -20,7 +21,7 @@ type QiNiuClient struct {
 }
 
 func NewQiNiuClient(accessKey, secretKey, bucket string, useHttps, useCdnDomains bool, domain, subdir string) *QiNiuClient {
-	return &QiNiuClient{
+	qiNiuClient := &QiNiuClient{
 		AccessKey:     accessKey,
 		SecretKey:     secretKey,
 		Bucket:        bucket,
@@ -29,6 +30,10 @@ func NewQiNiuClient(accessKey, secretKey, bucket string, useHttps, useCdnDomains
 		Domain:        domain,
 		Subdir:        subdir,
 	}
+	if !strings.HasSuffix(qiNiuClient.Domain, "/") {
+		qiNiuClient.Domain = qiNiuClient.Domain + "/"
+	}
+	return qiNiuClient
 }
 
 func (q *QiNiuClient) UploadImages(images []string) (urls []string) {
