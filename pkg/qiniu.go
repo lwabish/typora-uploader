@@ -53,6 +53,7 @@ func (q *QiNiuClient) UploadImages(images []string) (urls []string) {
 		_, fileName := path.Split(image)
 		key := q.Subdir + "/" + time.Now().Format("060102-150405") + "-" + fileName
 		log.Println("Start uploading", image, "as", key)
+		// TODO: go routine
 		if err := formUploader.PutFile(context.Background(), &ret, token, key, image, nil); err != nil {
 			log.Fatalln("Error:", err)
 		}
