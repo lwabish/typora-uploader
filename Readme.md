@@ -25,6 +25,7 @@
         }
    ```
 4. 配置typora：偏好设置-图像
+5. 日志路径：`$HOME/typora-qiniu-uploader/tqu.log`
 
 ## 注意事项
 
