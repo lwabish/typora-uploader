@@ -15,6 +15,10 @@ var version string
 
 func main() {
 
+	if len(os.Args) < 2 {
+		printUsage()
+	}
+
 	// get logger
 	log := pkg.InitOrGetLogger()
 
@@ -34,10 +38,6 @@ func main() {
 			log.Fatalln(err)
 		}
 		log.Fatalf("Can't find config file, a default one has been written to:  %s, please edit it and rerun this program", configFilePath)
-	}
-
-	if len(os.Args) < 2 {
-		printUsage()
 	}
 
 	images = os.Args[1:]
