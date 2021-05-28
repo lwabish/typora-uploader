@@ -4,7 +4,6 @@ import (
 	"context"
 	"github.com/qiniu/go-sdk/v7/auth/qbox"
 	"github.com/qiniu/go-sdk/v7/storage"
-	"log"
 	"path"
 	"strings"
 	"time"
@@ -52,13 +51,13 @@ func (q *QiNiuClient) UploadImages(images []string) (urls []string) {
 	for _, image := range images {
 		_, fileName := path.Split(image)
 		key := q.Subdir + "/" + time.Now().Format("060102-150405") + "-" + fileName
-		log.Println("Start uploading", image, "as", key)
+		logger.Println("Start uploading", image, "as", key)
 		// TODO: go routine
 		if err := formUploader.PutFile(context.Background(), &ret, token, key, image, nil); err != nil {
-			log.Fatalln("Error:", err)
+			logger.Fatalln("Error:", err)
 		}
 		urls = append(urls, q.Domain+key)
-		log.Println("Done uploading", image)
+		logger.Println("Done uploading", image)
 	}
 	return
 }

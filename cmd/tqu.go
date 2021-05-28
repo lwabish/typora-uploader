@@ -5,7 +5,6 @@ import (
 	"fmt"
 	"github.com/lwabish/typora-qiniu-uploader/pkg"
 	"io/ioutil"
-	"log"
 	"os"
 	"path"
 )
@@ -15,23 +14,21 @@ var images []string
 var version string
 
 func main() {
-	// TODO: save log to file
-	log.SetFlags(log.Lshortfile | log.LstdFlags)
+
+	// get logger
+	log := pkg.InitOrGetLogger()
 
 	homeDir, err := os.UserHomeDir()
 	if err != nil {
 		log.Fatalln(err)
 	}
 
+	// export default config file if not exists
 	configFilePath := path.Join(homeDir, pkg.ConfigDirname, pkg.ConfigFilename)
-	defaultConfig, err := json.MarshalIndent(pkg.NewConfig(), "", "")
-	if err != nil {
-		log.Fatalln(err)
-	}
-
 	if !pkg.PathExists(configFilePath) {
-		if err = os.MkdirAll(path.Join(homeDir, pkg.ConfigDirname), 0755); err != nil {
-			log.Fatalln("Can't Create Config Dir: ", err)
+		defaultConfig, err := json.MarshalIndent(pkg.NewConfig(), "", "")
+		if err != nil {
+			log.Fatalln(err)
 		}
 		if err = ioutil.WriteFile(configFilePath, defaultConfig, 0644); err != nil {
 			log.Fatalln(err)
@@ -50,6 +47,9 @@ func main() {
 	qClient := pkg.NewQiNiuClient(config.AccessKey, config.SecretKey, config.Bucket, config.UseHTTPS, config.UseCdnDomains, config.Domain, config.SubDir)
 	imageUris := qClient.UploadImages(images)
 
+	for _, imageUri := range imageUris {
+		log.Println(imageUri)
+	}
 	log.Println("Jobs done!")
 	for _, imageUri := range imageUris {
 		// use fmt instead of log because typora will recognize image url from stdout
