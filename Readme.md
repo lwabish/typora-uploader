@@ -11,7 +11,7 @@
 ## 使用方法
 
 1. 在release中下载编译好的二进制文件，直接运行一次
-2. 首次运行会提示无配置文件，并自动将配置模板写入`$HOME/typora-qiniu-uploader/config.json`
+2. 首次运行会提示无配置文件，并自动将配置模板写入`$HOME/.config/typora-qiniu-uploader/config.json`
 3. 编辑配置文件，示例如下
    ```json
        {

@@ -12,7 +12,7 @@
 
 1. Download prebuilt binary from release page.
 2. Run once.Normally a first-time run will get a hint that no config file found,after which the empty config file will
-   be written to `$HOME/typora-qiniu-uploader/config.json`
+   be written to `$HOME/.config/typora-qiniu-uploader/config.json`
 3. Edit the config file, example:
    ```json
        {
