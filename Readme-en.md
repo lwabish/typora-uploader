@@ -6,7 +6,7 @@
 
 - Basic Feature: Upload files to Qiniu Cloud and get urls immediately
 - Advanced Feature: Integrate with a super cool markdown editor and transform local images into remote ones immediately
-- [Demo](https://qncdn.wubowen.com.cn/typora/210508-162521-tqu-demo.gif)
+- [Demo](https://cdn.wubw.fun/typora/210508-162521-tqu-demo.gif)
 
 ## Usage
 
@@ -30,7 +30,7 @@
 
 ## Attention
 
-- Availability only tested on mac 11.3 and typora 0.10.8 (5313), other platforms or typora versions not fully tested, use at your own risks.
+- Availability only tested on mac 11.3 and typora 0.10.8 (5313), other platforms or typora versions are not fully tested yet, use at your own risks.
 
 ## References
 

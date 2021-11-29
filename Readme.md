@@ -6,7 +6,7 @@
 
 - 基本功能：将图片等文件上传到七牛云，并返回访问链接
 - 进阶功能：在[typora](https://typora.io/) 编辑器中无缝调用，自动将markdown中的本地图片转为七牛云中的图片
-- [演示](https://qncdn.wubowen.com.cn/typora/210508-162521-tqu-demo.gif)
+- [演示](https://cdn.wubw.fun/typora/210508-162521-tqu-demo.gif)
 
 ## 使用方法
 
@@ -29,7 +29,7 @@
 
 ## 注意事项
 
-- 目前仅在mac 11.3 & typora 0.10.8 (5313)版本得到了功能验证，其他操作系统及typora版本的可用性未知，使用风险自负
+- 目前仅在mac 11.3 & typora 0.10.8 (5313)版本得到了功能验证，其他操作系统及typora版本的可用性尚未经过测试
 
 ## 参考&致谢
 
