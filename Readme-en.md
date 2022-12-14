@@ -26,7 +26,7 @@
         }
    ```
 4. Change your typora setting to use this program as its image uploader: settings-image
-5. Local log located at：`$HOME/typora-qiniu-uploader/tqu.log`
+5. Local log located at：`$HOME/.config/typora-qiniu-uploader/tqu.log`
 
 ## Attention
 
