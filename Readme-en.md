@@ -28,9 +28,9 @@
 4. Change your typora setting to use this program as its image uploader: settings-image
 5. Local log located at：`$HOME/.config/typora-qiniu-uploader/tqu.log`
 
-## Attention
+## Compile
 
-- Availability only tested on mac 11.3 and typora 0.10.8 (5313), other platforms or typora versions are not fully tested yet, use at your own risks.
+`make install`
 
 ## References
 

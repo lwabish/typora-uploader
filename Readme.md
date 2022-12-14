@@ -27,9 +27,9 @@
 4. 配置typora：偏好设置-图像
 5. 日志路径：`$HOME/.config/typora-qiniu-uploader/tqu.log`
 
-## 注意事项
+## 编译
 
-- 目前仅在mac 11.3 & typora 0.10.8 (5313)版本得到了功能验证，其他操作系统及typora版本的可用性尚未经过测试
+`make install`
 
 ## 参考&致谢
 
